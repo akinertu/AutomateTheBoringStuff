@@ -1,3 +1,4 @@
+#GENERAL
     'Alice' + 'Bob' #String Concatenation
     'Alice' * 5 #String Replication
     print('Hello, world!') #print('Hello', end='') print('cats', 'dogs', 'mice', sep=',')
@@ -111,7 +112,7 @@
     .findall('Cell: 415-555-9999 Work: 212-555-0000') #matched objects in list of strings
     re.compile(r'.at')
     namesRegex.sub('CENSORED', 'Agent Alice') #replace any matches
-    
+
     # Character Classes
     \d  #Any numeric digit from 0 to 9.
     \D  #Any character that is not a numeric digit from 0 to 9.
@@ -120,7 +121,6 @@
     \s  #Any space, tab, or newline character. (Think of this as matching “space” characters.)
     \S  #Any character that is not a space, tab, or newline.
     
-
 #UTILITIES
     time.sleep(0.1) # Pause for 1/10 of a second.
     type(('hello',))
