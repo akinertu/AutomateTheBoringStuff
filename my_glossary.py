@@ -120,10 +120,16 @@
     \W  #Any character that is not a letter, numeric digit, or the underscore character.
     \s  #Any space, tab, or newline character. (Think of this as matching “space” characters.)
     \S  #Any character that is not a space, tab, or newline.
+
+#INPUT VALIDATION
+    import pyinputplus
+    response = pyip.inputNum('Enter num: ', min=4)
+    response = pyip.inputNum(blank=True)
+    response = pyip.inputNum(limit=2, default='N/A') #trail limit
+    response = pyip.inputNum(timeout=10) #time limit
+    response = pyip.inputNum(blockRegexes=[r'[02468]$']) #won’t accept even numbers
+    response = pyip.inputCustom(addsUpToTen) #custom validitation func
+    
     
 #UTILITIES
-    time.sleep(0.1) # Pause for 1/10 of a second.
-    type(('hello',))
-    id('Howdy')
-import pprint
-    pprint.pprint () #output looks much cleaner, with the keys sorted.
+    help(pyip.inputChoice) #find out more about functions
