@@ -130,6 +130,9 @@
     response = pyip.inputNum(blockRegexes=[r'[02468]$']) #won’t accept even numbers
     response = pyip.inputCustom(addsUpToTen) #custom validitation func
     
+#READING AND WRITING FILES
+    from pathlib import Path
+    Path('spam', 'bacon', 'eggs')
     
 #UTILITIES
     help(pyip.inputChoice) #find out more about functions
