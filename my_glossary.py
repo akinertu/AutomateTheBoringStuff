@@ -131,8 +131,58 @@
     response = pyip.inputCustom(addsUpToTen) #custom validitation func
     
 #READING AND WRITING FILES
-    from pathlib import Path
-    Path('spam', 'bacon', 'eggs')
-    
+    #Directory
+        from pathlib import Path
+        Path('spam', 'bacon', 'eggs')
+        Path.cwd() #current working directory as a string value
+        Path.home()
+        import os
+        os.chdir('C:\\Windows\\System32') #change cwd
+        os.makedirs('C:\\delicious\\walnut\\waffles') #create new folders
+        Path(r'C:\Users\Al\spam').mkdir() #To make a directory from a Path object
+        Path.cwd().is_absolute()
+        Path.home() / Path('my/relative/path')
+        os.path.abspath(path) #convert a relative path into an absolute
+        os.path.relpath(path, start) #string of a relative path from the start path to path
+        p = Path('C:/Users/Al/spam.txt')
+        p.anchor #'C:\\'
+        p.parent #
+        p.name #'spam.txt'
+        p.stem #'spam'
+        p.suffix #'.txt'
+        p.drive #'C:'
+        p.exists() #returns True if the path exists
+        p.is_file() #returns True if the path exists and is a file
+        p.is_dir() #returns True if the path exists and is a directory,
+        Path.cwd().parents[0]
+        os.path.dirname(path)
+        os.path.basename(path)
+        os.path.split(calcFilePath) #dir name and base name together tuple
+        calcFilePath.split(os.sep) #['C:', 'Windows', 'System32', 'calc.exe']
+        os.path.getsize(path) #size in bytes of the file
+        os.listdir(path) #list of filename strings for each file in the path 
+        list(p.glob('*.txt') # Lists all text files.
+        list(p.glob('project?.docx')
+    #Read nad write
+        p = Path('spam.txt')
+        p.write_text('Hello, world!') #create a spam.txt file with the content 'Hello, world!'. 
+        p.read_text() #reads and returns the contents
+        helloFile = open('C:\\Users\\your_home_folder\\hello.txt') #a File object
+        helloContent = helloFile.read()    
+        open('bacon.txt', 'a') #append mode
+        open('bacon.txt', 'w') # write mode
+        baconFile.close() #After reading or writing a file, call the close() method before opening the file again
+    #Saving Variables
+        import shelve
+        shelfFile = shelve.open('mydata')
+        cats = ['Zophie', 'Pooka', 'Simon']
+        shelfFile['cats'] = cats
+        shelfFile.close()
+        shelfFile = shelve.open('mydata')
+        type(shelfFile) 
+        shelfFile['cats'] #list(shelfFile.values())
+        shelfFile.close()
+        
+        
 #UTILITIES
     help(pyip.inputChoice) #find out more about functions

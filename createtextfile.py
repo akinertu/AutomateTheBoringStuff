@@ -1,0 +1,16 @@
+from pathlib import Path
+import os
+print(Path.cwd())
+os.chdir('C:\\Users\\lenovo\\Desktop')
+cwd = Path.cwd()
+print(cwd)
+baconFile = open('bacon.txt', 'w')
+baconFile.write('Hello, world!\n')
+baconFile.close()
+baconFile = open('bacon.txt', 'a')
+baconFile.write('Bacon is not a vegetable.')
+baconFile.close()
+baconFile = open('bacon.txt')
+content = baconFile.read()
+baconFile.close()
+print(content)
