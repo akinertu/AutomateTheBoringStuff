@@ -163,7 +163,7 @@
         os.listdir(path) #list of filename strings for each file in the path 
         list(p.glob('*.txt') # Lists all text files.
         list(p.glob('project?.docx')
-    #Read nad write
+    #Read and write
         p = Path('spam.txt')
         p.write_text('Hello, world!') #create a spam.txt file with the content 'Hello, world!'. 
         p.read_text() #reads and returns the contents
@@ -182,7 +182,26 @@
         type(shelfFile) 
         shelfFile['cats'] #list(shelfFile.values())
         shelfFile.close()
-        
+#ORGANIZING FILES ch10
+    import shutil
+    shutil.copy(source, destination) #copy single folder
+    shutil.copytree(source, destination) #copy entire folder
+    shutil.move(source, destination) #move the file or folder
+    os.unlink(path) #delete the file
+    os.rmdir(path) #delete the folder
+    shutil.rmtree(path) #remove the folder and all files 
+    import send2trash
+    send2trash.send2trash('bacon.txt') #sending files to the recycle bin
+    os.walk() #returns lists of strings for the subfolder and filename variables
+    import zipfile
+    exampleZip = zipfile.ZipFile(p / 'example.zip') #reading zip file
+    exampleZip.extractall() #extracting zip file
+    
+
+
+
+
+
         
 #UTILITIES
     help(pyip.inputChoice) #find out more about functions
