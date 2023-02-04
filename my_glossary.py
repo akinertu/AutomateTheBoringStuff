@@ -1,3 +1,8 @@
+#DEFINITIONS
+    keywords #such as names classNum
+    identifiers #such as if, for, while
+    statements # such as pi = 3.14
+
 #GENERAL
     'Alice' + 'Bob' #String Concatenation
     'Alice' * 5 #String Replication
@@ -197,10 +202,39 @@
     exampleZip = zipfile.ZipFile(p / 'example.zip') #reading zip file
     exampleZip.extractall() #extracting zip file
     
+#DEBUGGING ch11
+    raise Exception('Symbol must be a single character string.') #will store a variable named err.
+    import traceback
+    errorFile = open('errorInfo.txt', 'w')
+    errorFile.write(traceback.format_exc())
+    assert ages[0] <= ages[-1] #“failing fast” 
+    import logging
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -  %(levelname)s  -  %(message)s')
+    logging.debug('i is ' + str(i) + ', total is ' + str(total))
+    logging.debug() #Used for small details.
+    logging.info() #record information on general events
+    logging.warning() #indicate a potential problem that doesn’t prevent the program
+    logging.error() #an error that caused the program to fail
+    logging.critical() # indicate a fatal error
+    logging.disable(logging.CRITICAL) #hiding log messages.
+    logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format=' %(asctime)s -  %(levelname)s -  %(message)s')
 
-
-
-
+#WEB SCRAPING ch12
+    import webbrowser
+        webbrowser.open('https://inventwithpython.com/')
+    import requests
+        requests.get('https://automatetheboringstuff.com/files/rj.txt')
+        raise_for_status() #to ensure that a program halts if a bad download occurs
+        open('RomeoAndJuliet.txt', 'wb') #you must open the file in write binary mode
+    import bs4
+        exampleSoup = bs4.BeautifulSoup(exampleFile, 'html.parser')
+        soup.select('div') #All elements named <div>
+        soup.select('#author') #The element with an id attribute of author
+        soup.select('.notice') #All elements that use a CSS class attribute named notice
+        soup.select('div span') #All elements named <span> that are within an element named <div>
+        soup.select('div > span') #All elements named <span> that are directly within an element named <div>, with no other element in between
+        soup.select('input[name]') #All elements named <input> that have a name attribute with any value
+        soup.select('input[type="button"]') #All elements named <input> that have an attribute named type with value button        
 
         
 #UTILITIES
