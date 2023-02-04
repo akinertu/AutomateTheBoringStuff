@@ -6,7 +6,7 @@ import requests, webbrowser, bs4
 res = requests.get('https://pypi.org/search/?q=' 
 + 'asd')
 res.raise_for_status()
-
+print(res.text)
 soup = bs4.BeautifulSoup(res.text, 'html.parser')
 linkElems = soup.select('.package-snippet')
 
