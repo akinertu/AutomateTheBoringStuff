@@ -223,7 +223,7 @@
     import webbrowser
         webbrowser.open('https://inventwithpython.com/')
     import requests
-        requests.get('https://automatetheboringstuff.com/files/rj.txt')
+        requests.get('https://automatetheboringstuff.com/files/rj.txt') #download web page
         raise_for_status() #to ensure that a program halts if a bad download occurs
         open('RomeoAndJuliet.txt', 'wb') #you must open the file in write binary mode
     import bs4
