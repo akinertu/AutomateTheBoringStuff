@@ -235,7 +235,26 @@
         soup.select('div > span') #All elements named <span> that are directly within an element named <div>, with no other element in between
         soup.select('input[name]') #All elements named <input> that have a name attribute with any value
         soup.select('input[type="button"]') #All elements named <input> that have an attribute named type with value button        
-
+    from selenium import webdriver
+        browser = webdriver.Chrome()
+        browser.get('https://inventwithpython.com')
+        browser..find_elements(By.CLASS_NAME, "tomatoes") #Elements that use the CSS class name
+        browser.find_elements(By.CSS_SELECTOR, '[name="q"]') #Elements that match the CSS selector
+        browser.find_elements(By.ID, "fruits") #Elements with a matching id attribute value
+        find_element(By.CSS_SELECTOR, '[name="q"]').send_keys("webElement") # used to track (or) find DOM element which has the focus in the current browsing context.
+        browser.find_elements(By.TAG_NAME, 'div') #Elements with a matching tag name 
+        userElem.send_keys('your_real_username_here')
+        https://www.selenium.dev/documentation/webdriver/elements/finders/
+        #Attribute or method 
+        tag_name # The tag name, such as 'a' for an <a> element
+        get_attribute(name) # The value for the element’s name attribute
+        text #The text within the element, such as 'hello' in <span>hello </span>
+        clear() #For text field or text area elements, clears the text typed into it
+        is_displayed() #Returns True if the element is visible; otherwise returns False
+        is_enabled() #For input elements, returns True if the element is enabled; otherwise returns False
+        is_selected() #For checkbox or radio button elements, returns True if the element is selected; otherwise returns False
+        location #A dictionary with keys 'x' and 'y' for the position of the element in the page
+        
         
 #UTILITIES
     help(pyip.inputChoice) #find out more about functions
