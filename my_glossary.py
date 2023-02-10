@@ -236,6 +236,7 @@
         soup.select('input[name]') #All elements named <input> that have a name attribute with any value
         soup.select('input[type="button"]') #All elements named <input> that have an attribute named type with value button        
     from selenium import webdriver
+    from selenium.webdriver.common.by import By
         browser = webdriver.Chrome()
         browser.get('https://inventwithpython.com')
         browser..find_elements(By.CLASS_NAME, "tomatoes") #Elements that use the CSS class name
@@ -244,6 +245,10 @@
         find_element(By.CSS_SELECTOR, '[name="q"]').send_keys("webElement") # used to track (or) find DOM element which has the focus in the current browsing context.
         browser.find_elements(By.TAG_NAME, 'div') #Elements with a matching tag name 
         userElem.send_keys('your_real_username_here')
+        from selenium.webdriver.common.keys import Keys
+        Keys.ENTER, Keys.RETURN # The enter and return keys
+        browser.refresh() #Clicks the Refresh/Reload button.
+        browser.back() #Clicks the Back button.
         https://www.selenium.dev/documentation/webdriver/elements/finders/
         #Attribute or method 
         tag_name # The tag name, such as 'a' for an <a> element
@@ -254,7 +259,25 @@
         is_enabled() #For input elements, returns True if the element is enabled; otherwise returns False
         is_selected() #For checkbox or radio button elements, returns True if the element is selected; otherwise returns False
         location #A dictionary with keys 'x' and 'y' for the position of the element in the page
-        
-        
+        passwordElem.send_keys('your_real_password_here')
+        passwordElem.submit()
+#WORKING WITH EXCEL SPREADSHEETS ch13
+    import openpyxl
+    wb = openpyxl.load_workbook('example.xlsx')
+    wb.sheetnames # The workbook's sheets' names.
+    sheet = wb['Sheet3'] # Get a sheet from the workbook.
+    sheet['A1'] # Get a cell from the sheet.
+    tuple(sheet['A1':'C3']) ## Get all cells from A1 to C3.
+    sheet['A1'].value # Get the value from the cell.
+    'Row %s, Column %s is %s' % (c.row, c.column, c.value) # Get the row, column, and value from the cell.
+    'Cell %s is %s' % (c.coordinate, c.value)
+    sheet.cell(row=1, column=2) #<Cell 'Sheet1'.B1>
+    sheet.max_row # Get the highest row number.
+    from openpyxl.utils import get_column_letter, column_index_from_string #convert from numbers to letters
+    get_column_letter(1) # Translate column 1 to a letter.
+    for rowOfCellObjects in sheet['A1':'C3']:
+        for cellObj in rowOfCellObjects:
+
+
 #UTILITIES
     help(pyip.inputChoice) #find out more about functions
