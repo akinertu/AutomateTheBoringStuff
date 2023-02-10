@@ -67,7 +67,7 @@
     spam.items()
     list(spam.keys()) #value returned from keys() and passes it to list()
     spam.get()
-    spam.setdefault()
+    spam.setdefault() #set a value in a dictionary for a certain key only if that key does not already have a value.
 
 #MANIPULATING STRINGS
     spam = "That is Alice's cat." #Strings can begin and end with double quotes
@@ -277,6 +277,13 @@
     get_column_letter(1) # Translate column 1 to a letter.
     for rowOfCellObjects in sheet['A1':'C3']:
         for cellObj in rowOfCellObjects:
+    wb = openpyxl.Workbook() # Create a blank workbook.
+    wb.sheetnames # It starts with one sheet.
+    sheet.title = 'Spam Bacon Eggs Sheet' # Change title.
+    wb.create_sheet(index=0, title='First Sheet') # Create a new sheet at index 0.
+    wb.save('example_copy.xlsx') # Save the workbook.
+    del wb['Sheet1']
+    sheet['A1'] = 'Hello, world!' # Edit the cell's value.
 
 
 #UTILITIES
