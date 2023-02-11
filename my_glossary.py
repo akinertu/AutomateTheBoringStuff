@@ -263,27 +263,35 @@
         passwordElem.submit()
 #WORKING WITH EXCEL SPREADSHEETS ch13
     import openpyxl
-    wb = openpyxl.load_workbook('example.xlsx')
-    wb.sheetnames # The workbook's sheets' names.
-    sheet = wb['Sheet3'] # Get a sheet from the workbook.
-    sheet['A1'] # Get a cell from the sheet.
-    tuple(sheet['A1':'C3']) ## Get all cells from A1 to C3.
-    sheet['A1'].value # Get the value from the cell.
-    'Row %s, Column %s is %s' % (c.row, c.column, c.value) # Get the row, column, and value from the cell.
-    'Cell %s is %s' % (c.coordinate, c.value)
-    sheet.cell(row=1, column=2) #<Cell 'Sheet1'.B1>
-    sheet.max_row # Get the highest row number.
-    from openpyxl.utils import get_column_letter, column_index_from_string #convert from numbers to letters
-    get_column_letter(1) # Translate column 1 to a letter.
-    for rowOfCellObjects in sheet['A1':'C3']:
-        for cellObj in rowOfCellObjects:
-    wb = openpyxl.Workbook() # Create a blank workbook.
-    wb.sheetnames # It starts with one sheet.
-    sheet.title = 'Spam Bacon Eggs Sheet' # Change title.
-    wb.create_sheet(index=0, title='First Sheet') # Create a new sheet at index 0.
-    wb.save('example_copy.xlsx') # Save the workbook.
-    del wb['Sheet1']
-    sheet['A1'] = 'Hello, world!' # Edit the cell's value.
+        wb = openpyxl.load_workbook('example.xlsx') #pass True for the data_only keyword argument for results
+        wb.sheetnames # The workbook's sheets' names.
+        sheet = wb['Sheet3'] # Get a sheet from the workbook.
+        cell = sheet['A1'] # Get a cell from the sheet.
+        tuple(sheet['A1':'C3']) ## Get all cells from A1 to C3.
+        sheet['A1'].value # Get the value from the cell.
+        'Row %s, Column %s is %s' % (cell.row, cell.column, cell.value) # Get the row, column, and value from the cell.
+        'Cell %s is %s' % (c.coordinate, c.value)
+        sheet.cell(row=1, column=2) #<Cell 'Sheet1'.B1>
+        sheet.max_row # Get the highest row number.
+        from openpyxl.utils import get_column_letter, column_index_from_string #convert from numbers to letters
+            get_column_letter(1) # Translate column 1 to a letter.
+        for rowOfCellObjects in sheet['A1':'C3']:
+            for cellObj in rowOfCellObjects:
+        wb = openpyxl.Workbook() # Create a blank workbook.
+        wb.sheetnames # It starts with one sheet.
+        sheet.title = 'Spam Bacon Eggs Sheet' # Change title.
+        wb.create_sheet(index=0, title='First Sheet') # Create a new sheet at index 0.
+        wb.save('example_copy.xlsx') # Save the workbook.
+        del wb['Sheet1']
+        sheet['A1'] = 'Hello, world!' # Edit the cell's value.
+    from openpyxl.styles import Font
+        sheet['A1'].font = Font(size=24, italic=True) # Create a font.
+        sheet.row_dimensions[1].height = 70 # Set the height and width
+        sheet.merge_cells('A1:D3') # Merge all these cells.
+        sheet.unmerge_cells('A1:D3') # Split these cells up.
+        sheet.freeze_panes = 'A2' #Row 1  Rows and columns frozen
+        openpyxl.charts.LineChart(), openpyxl.chart.ScatterChart(), openpyxl.chart.PieChart()
+        
 
 
 #UTILITIES
