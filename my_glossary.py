@@ -83,7 +83,6 @@
     'My name is %s. I am %s years old.' #string interpolation
     f'My name is {name}. Next year I will be {age + 1}.'
     upper(), lower(), isupper(), islower() # uppercase, lowercase, Boolean
-    
     isalpha() #letters and isn’t blank?
     isalnum() #letters and numbers and is not blank?
     isdecimal() #only of numeric characters and is not blank?
@@ -239,7 +238,7 @@
     from selenium.webdriver.common.by import By
         browser = webdriver.Chrome()
         browser.get('https://inventwithpython.com')
-        browser..find_elements(By.CLASS_NAME, "tomatoes") #Elements that use the CSS class name
+        browser.find_elements(By.CLASS_NAME, "tomatoes") #Elements that use the CSS class name
         browser.find_elements(By.CSS_SELECTOR, '[name="q"]') #Elements that match the CSS selector
         browser.find_elements(By.ID, "fruits") #Elements with a matching id attribute value
         find_element(By.CSS_SELECTOR, '[name="q"]').send_keys("webElement") # used to track (or) find DOM element which has the focus in the current browsing context.
