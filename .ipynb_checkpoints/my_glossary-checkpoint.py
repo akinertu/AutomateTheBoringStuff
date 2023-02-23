@@ -2,6 +2,7 @@
     keywords #such as names classNum
     identifiers #such as if, for, while
     statements # such as pi = 3.14
+
 #GENERAL
     'Alice' + 'Bob' #String Concatenation
     'Alice' * 5 #String Replication
@@ -13,6 +14,7 @@
     int('42') #round a floating-point number down.
     float(10)
     spam += 1 #spam = spam + 1
+
 #FLOW STATEMENTS
     if name == 'Alice':
         else:
@@ -29,6 +31,7 @@
         global eggs
         try:
         except ZeroDivisionError:
+
 #LISTS, STRING(IMMUTABLE), TUPLE
     spam = ['cat', 'bat', 'rat', 'elephant'] #list  
     spam[2] #  is a list with an index
@@ -49,7 +52,8 @@
     spam.sort() #number values or lists of strings can be sorted
     spam.sort(reverse=True) #sort the values in reverse order
     spam.sort(key=str.lower)
-    spam.reverse() #Reversing the Values in a List      
+    spam.reverse() #Reversing the Values in a List 
+        
     spam = ('hello', 42, 0.5) #tuple
     cheese = spam # The reference is being copied, not the list.
     list(('cat', 'dog', 5)) #tuple to list
@@ -133,12 +137,12 @@
 #READING AND WRITING FILES
     #Directory
         from pathlib import Path
-            Path('spam', 'bacon', 'eggs')
-            Path.cwd() #current working directory as a string value
-            Path.home()
+        Path('spam', 'bacon', 'eggs')
+        Path.cwd() #current working directory as a string value
+        Path.home()
         import os
-            os.chdir('C:\\Windows\\System32') #change cwd
-            os.makedirs('C:\\delicious\\walnut\\waffles') #create new folders
+        os.chdir('C:\\Windows\\System32') #change cwd
+        os.makedirs('C:\\delicious\\walnut\\waffles') #create new folders
         Path(r'C:\Users\Al\spam').mkdir() #To make a directory from a Path object
         Path.cwd().is_absolute()
         Path.home() / Path('my/relative/path')
